@@ -1,12 +1,17 @@
-1. Delete "VOTE" pod observe UI and Unix
+1. Delete VOTE pod observe UI and Unix
+The UI was not updated until I did a refresh.  At that time I saw the new VOTE pod name.
+The RC created a new VOTE pod.
 
+2. Delete WORKER pod observe UI and Unix
+The UI was not affected.  No change even after refresh as the VOTE pod was unaffected.
+The RC restart the WORKER pod.
 
-2. Delete "WORKER" pod observe UI and Unix
-
-
-3. Delete "DB" pod observe UI and Unix
-
+3. Delete DB pod observe UI and Unix
+The UI was not affected.  No change even after refresh as the VOTE pod was unaffected.  
+I was surprised to see this as I expected the data to be reset to 0 votes.  But somehow it persisted.  
+So I looked at db-deplolyment.yaml and see it is a Volume
+The RC restart the DB pod.
 
 4. What did you do to get the "RESULT" pod to work
-
+Noithing the RESULT pod was unaffected. 
 
